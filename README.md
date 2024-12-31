@@ -1,5 +1,4 @@
 # Spelling Practice Application With Feedback
-# Spelling Practice Application
 
 ## Overview
 This is a simple C++ console application designed to help users practice their spelling. The application allows users to start a spelling practice session, add new words to the practice list, view the current list of words, and exit the application.
@@ -25,13 +24,13 @@ C++11 or later
 - During any input prompt, entering `<-` will take you back to the main menu.
 
 ## File Structure
-- `s.cpp`: The main source code file for the application.
+- `index.cpp`: The main source code file for the application.
 - `words.txt`: The file where the list of words is saved and loaded from.
 
 ## How to Compile
 To compile the application, use the following command in your terminal or command prompt:
 ```sh
-g++ -o spelling_practice [s.cpp]
+g++ -o spelling_practice [index.cpp]
 ```
 or Run Using IDE
 
