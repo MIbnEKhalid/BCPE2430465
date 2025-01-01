@@ -39,6 +39,8 @@ To compile the application, follow one of these methods:
     
 3.	Using an IDE:
        -	Copy and paste the code into your IDE and compile it directly.
+  
+You Can Download and Run PreBuil Application from Release: [Download PreBuil Application](https://github.com/MIbnEKhalid/ICTLabProject/releases/tag/release)
 
 ### Dev-C++ Instructions
 If you are using Dev-C++, follow these instructions before running the program:
