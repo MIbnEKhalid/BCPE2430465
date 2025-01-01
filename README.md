@@ -29,13 +29,17 @@ To compile the application, follow one of these methods:
 1.	Using Batch Files:
        -	Run `compile(index).bat` to compile `index.cpp`.
        -	Run `compile(UIless).bat` to compile `UIless.cpp`.
-    
+         
+    Make sure you have g++ installed in your deivce
+
    
 2.	Using Command Line:
        -	Use the following command to compile:
        ```ssh
-           g++ -o spelling_practice [filename.cpp]
+           g++ -o spelling_practice filename.cpp
        ```
+       
+    Make sure you have g++ installed in your deivce
     
 3.	Using an IDE:
        -	Copy and paste the code into your IDE and compile it directly.
