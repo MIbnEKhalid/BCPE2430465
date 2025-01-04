@@ -110,7 +110,8 @@ void displayMenu()
 	cout << "1. Start Spelling Practice\n";
 	cout << "2. Add a New Word\n";
 	cout << "3. View Spelling Practice Words\n";
-	cout << "4. Exit\n";
+	cout << "4. Delete Spelling Practice Words\n";
+	cout << "5. Exit\n";
 	cout << "Please choose an option: ";
 }
 
@@ -298,7 +299,56 @@ void viewWords(const vector<string>& words)
 	pauseConsole();
 }
 
+void deleteWords(vector<string>& words)
+{
+	clearConsole();
+	cout << CYAN << "Spelling Practice Words:\n"
+		<< RESET;
 
+	for (size_t i = 0; i < words.size(); ++i)
+	{
+		cout << i + 1 << ". " << words[i] << "\n";
+	}
+
+	while (true)
+	{
+		cout << "\nEnter the number of the word you want to delete (or '<-' to go back to the main menu): ";
+		string input = getUserInput();
+
+		if (input == BACK_TO_MENU)
+		{
+			return;
+		}
+
+		int index;
+		try
+		{
+			index = stoi(input) - 1;
+		}
+		catch (const invalid_argument&)
+		{
+			cout << RED << "Invalid input. Please enter a valid number.\n"
+				<< RESET;
+			continue;
+		}
+
+		if (index >= 0 && index < words.size())
+		{
+			words.erase(words.begin() + index);
+			cout << GREEN << "Word deleted successfully!\n"
+				<< RESET;
+			saveWords(words, "words.txt");
+			break;
+		}
+		else
+		{
+			cout << RED << "Invalid number. Please try again.\n"
+				<< RESET;
+		}
+	}
+
+	pauseConsole();
+}
 
 int main()
 {
@@ -328,6 +378,10 @@ int main()
 			viewWords(words);
 		}
 		else if (choice == "4")
+		{
+			deleteWords(words);
+		}
+		else if (choice == "5")
 		{
 			cout << "Exiting the application. Goodbye!\n";
 			break;
